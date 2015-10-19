@@ -3,6 +3,13 @@
 import { given } from './../lib/bundle';
 
 describe("[Given] Functional Utilities: ", () => {
+  it("should not have its behavior affected if value is falsy", () => {
+    let v;
+    let r = given(v).when(u => u === undefined).then(() => 5).otherwise(() => 10);
+
+    expect(r.out()).toBe(5, "Should have returned 5");
+  });
+
   it("should apply `then` when condition is matched", () => {
     let v = 2;
     let r = given(v).when(two => two === 2).then(two => two * 2);
