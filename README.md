@@ -15,6 +15,29 @@ This repository is a holder of various utilities that could come in handy if you
 
 ## Utilities
 
+### Identity
+Function whose only purpose is to return the same provided value.
+
+```javascript
+/* Regular Approach*/
+
+let v = getRandomValue();
+let oddAction = (n) => n * 2;
+
+return v % 2 == 0 ? v : oddAction(v);
+
+/* Identity Approach */
+
+import { Identity } from "...";
+
+let v = getRandomValue();
+let oddAction = (n) => n * 2;
+
+return (v % 2 === 0 ? Identity : oddAction)(v);
+```
+
+This isn't the best example, but there's probaby no -good- example, since Identity simply returns whatever you throw at him.
+
 ### Given
 Replacement for `switch/case` and `if/else if/else`
 
@@ -105,13 +128,13 @@ if (v % 20 === 0) {
 return r;
 
 /* Validator Approach */
-import { Validator } from '...';
+import { Validator, Identity } from '...';
 
 return Validator
   .from(getRandomValue())
   .where(v => v % 20 === 0)
   .match({
-    valid: v => v,
+    valid: Identity,
     invalid: v => v % 20
   });
 
