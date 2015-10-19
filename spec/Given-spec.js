@@ -1,4 +1,6 @@
-import { given } from './../libs/bundle';
+"use strict";
+
+import { given } from './../lib/bundle';
 
 describe("[Given] Functional Utilities: ", () => {
   it("should apply `then` when condition is matched", () => {
@@ -16,7 +18,7 @@ describe("[Given] Functional Utilities: ", () => {
   it("should only follow the matched path when using `then` or `otherwise`", () => {
     let v = 10;
     let p = given(v);
-    let c = p.when(ten => ten === v).then(ten => ten * ten).otherwise(ten => { throw "This should've been ignored." });
+    let c = p.when(ten => ten === v).then(ten => ten * ten).otherwise(() => { throw "This should've been ignored." });
 
     expect(c.out()).toBe(v * v, "The expected path was not followed.");
   });

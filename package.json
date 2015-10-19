@@ -1,0 +1,39 @@
+{
+  "name": "functional-programming-utilities",
+  "version": "0.0.1",
+  "description": " Holder of various Functional Programming utilities",
+  "main": "compiled/dist/FunctionalProgrammingUtilities.js",
+  "scripts": {
+    "test": "jasmine --no-color spec/*.js",
+    "lint": "npm run lint:lib && npm run lint:src&& npm run lint:spec",
+    "lint:spec": "jshint spec/",
+    "lint:lib": "jshint lib/",
+    "lint:src": "jshint src/",
+    "compile": "npm run compile:libs && npm run compile:src",
+    "compile:src": "babel -d compiled/dist/ src/",
+    "compile:libs": "babel -d compiled/libs/ libs/",
+
+    "prepublish": "npm run compile",
+    "build": "npm run test && npm run lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karudedios/FunctionalProgrammingUtilities.git"
+  },
+  "keywords": [
+    "FunctionalProgramming",
+    "Functional",
+    "Utilities"
+  ],
+  "author": "Carlos de Dios",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/karudedios/FunctionalProgrammingUtilities/issues"
+  },
+  "homepage": "https://github.com/karudedios/FunctionalProgrammingUtilities#readme",
+  "devDependencies": {
+    "babel": "^5.8.23",
+    "jasmine-es6": "0.0.18",
+    "jshint": "^2.8.0"
+  }
+}

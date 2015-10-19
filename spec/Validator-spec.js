@@ -1,4 +1,6 @@
-import { Validator } from './../libs/bundle';
+"use strict";
+
+import { Validator } from './../lib/bundle';
 
 describe("[Validator] Functional Utilities: ", () => {
   it("should wrap a value", () => {

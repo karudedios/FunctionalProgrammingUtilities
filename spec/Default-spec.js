@@ -1,4 +1,6 @@
-import { compose, curry, pipe } from './../libs/bundle';
+"use strict";
+
+import { compose, curry, pipe } from './../lib/bundle';
 
 describe("Default Functional Utilities: ", () => {
   describe("compose", () => {
@@ -61,7 +63,7 @@ describe("Default Functional Utilities: ", () => {
       let r = pipe(v, ...funcs);
 
       expect(r).toBe(v);
-    })
+    });
 
     it("should return the result of all evaluations when called with n functions", () => {      
       let a = 5;

@@ -1,1 +1,1 @@
-export * from './../libs/bundle';
+export * from './../lib/bundle';
