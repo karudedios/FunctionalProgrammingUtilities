@@ -2,13 +2,15 @@
 
 import { Validator } from './../lib/bundle';
 
+let assert = require('assert');
+
 describe("[Validator] Functional Utilities: ", () => {
   it("should wrap a value", () => {
     let n = 10;
     let v = Validator.from(n);
 
-    expect(typeof v).not.toBe(typeof undefined, "Should not be undefined");
-    expect(typeof v).not.toBe(typeof n, "Should have different types");
+    assert.notStrictEqual(typeof v, typeof undefined, "Should not be undefined");
+    assert.notStrictEqual(typeof v, typeof n, "Should have different types");
   });
 
   it("should choose valid path when valid", () => {
@@ -16,8 +18,8 @@ describe("[Validator] Functional Utilities: ", () => {
     let v = Validator.from(n);
 
     v.where(x => x % 2 === 0).match({
-      valid: (v) => expect(v).toBe(n),
-      invalid: (v) => expect(v).toBe(false, "The path should have been valid")
+      valid: (v) => assert.strictEqual(v, n),
+      invalid: (v) => assert.strictEqual(v, false, "The path should have been valid")
     });
   });
 
@@ -26,8 +28,8 @@ describe("[Validator] Functional Utilities: ", () => {
     let v = Validator.from(n);
 
     v.where(x => x % 3 === 0).match({
-      valid: (v) => expect(v).toBe(false, "The path should have been invalid"),
-      invalid: (v) => expect(v).toBe(n)
+      valid: (v) => assert.strictEqual(v, false, "The path should have been invalid"),
+      invalid: (v) => assert.strictEqual(v, n)
     });
   });
 
@@ -35,9 +37,9 @@ describe("[Validator] Functional Utilities: ", () => {
     let n = 10;
 
     let v = Validator.from(n).where(x => x % 2 === 0).apply(x => x * 2);
-    expect(v).toBe(20);
+    assert.strictEqual(v, 20);
 
     let i = Validator.from(n).where(x => x % 3 === 0).apply(x => x * 2);
-    expect(i).toBe(n);
+    assert.strictEqual(i, n);
   });
 });

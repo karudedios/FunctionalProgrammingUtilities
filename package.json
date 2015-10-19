@@ -4,7 +4,7 @@
   "description": " Holder of various Functional Programming utilities",
   "main": "compiled/dist/FunctionalProgrammingUtilities.js",
   "scripts": {
-    "test": "jasmine --no-color spec/*.js",
+    "test": "mocha --compilers js:babel/register spec/",
     "lint": "npm run lint:lib && npm run lint:src&& npm run lint:spec",
     "lint:spec": "jshint spec/",
     "lint:lib": "jshint lib/",
@@ -33,7 +33,7 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "coveralls": "^2.11.4",
-    "jasmine-es6": "0.0.18",
-    "jshint": "^2.8.0"
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.3"
   }
 }
