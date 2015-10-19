@@ -32,6 +32,7 @@
   "homepage": "https://github.com/karudedios/FunctionalProgrammingUtilities#readme",
   "devDependencies": {
     "babel": "^5.8.23",
+    "coveralls": "^2.11.4",
     "jasmine-es6": "0.0.18",
     "jshint": "^2.8.0"
   }
