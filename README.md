@@ -60,23 +60,32 @@ import { given } from "...";
 
 let value = getRandomValue();
 
+let makeHigherOrder = (f) => (b) => (a) => f(a, b);
+let equalTo = makeHigherOrder((a, b) => a === b);
+let subtract = makeHigherOrder((a, b) => a - b);
+
+let multiplyBy = makeHigherOrder((a, b) => a * b);
+let divisibleBy = makeHigherOrder((a, b) => a % b === 0);
+
 return (
   given(value)
-    .when(v => v ===  5)
-      .then(v => v * 20)
-    .when(v => v === 10)
-      .then(v => v * 10)
-    .when(v => v === 20)
-      .then(v => v *  5)
-    .when(v => v % 20 === 0)
-      .then(v => v - 20)
-    .when(v => v % 10 === 0)
-      .then(v => v - 10)
-      .otherwise(v => v - 5)
-    .apply(v => v - 25)
+    .when(equalTo(5))
+      .then(multiplyBy(20))
+    .when(equalTo(10))
+      .then(multiplyBy(10))
+    .when(equalTo(20))
+      .then(multiplyBy(5))
+    .when(divisibleBy(20))
+      .then(subtract(20))
+    .when(divisibleBy(10))
+      .then(subtract(10))
+      .otherwise(subtract(5))
+    .apply(subtract(25))
     .out());
 
 ```
+
+As you can see this approach allows for a far more clear and sentence like composition.
 
 ### Validator
 Wrapper whose only purpose is to check whether a value is `valid` or `invalid` according to the constraints that said item is evaluated with, it can as well replace `if/else`.
