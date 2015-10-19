@@ -6,9 +6,15 @@
 
 **Travis CI Status:**
 
-| Master | Develop |
+| **Master** | [![Build Status](https://travis-ci.org/karudedios/FunctionalProgrammingUtilities.svg?branch=master)](https://travis-ci.org/karudedios/FunctionalProgrammingUtilities) |
 | -------|-------- |
-| [![Build Status](https://travis-ci.org/karudedios/FunctionalProgrammingUtilities.svg?branch=master)](https://travis-ci.org/karudedios/FunctionalProgrammingUtilities) | [![Build Status](https://travis-ci.org/karudedios/FunctionalProgrammingUtilities.svg?branch=develop)](https://travis-ci.org/karudedios/FunctionalProgrammingUtilities) |
+| **Develop**| [![Build Status](https://travis-ci.org/karudedios/FunctionalProgrammingUtilities.svg?branch=develop)](https://travis-ci.org/karudedios/FunctionalProgrammingUtilities) |
+
+**Code Coverage Status:**
+
+| **Master** | [![Coverage Status](https://coveralls.io/repos/karudedios/FunctionalProgrammingUtilities/badge.svg?branch=master&service=github)](https://coveralls.io/github/karudedios/FunctionalProgrammingUtilities?branch=master) |
+| -------|-------- |
+| **Develop**| [![Coverage Status](https://coveralls.io/repos/karudedios/FunctionalProgrammingUtilities/badge.svg?branch=develop&service=github)](https://coveralls.io/github/karudedios/FunctionalProgrammingUtilities?branch=develop) |
 
 ## Description
 This repository is a holder of various utilities that could come in handy if you're introduced to the Functional Programming world in Javascript.

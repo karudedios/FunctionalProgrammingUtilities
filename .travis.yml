@@ -6,3 +6,4 @@ branches:
   only:
     - master
     - develop
+after_success: coveralls
