@@ -11,8 +11,7 @@
     "lint:src": "jshint src/",
     "compile": "npm run compile:libs && npm run compile:src",
     "compile:src": "babel -d compiled/dist/ src/",
-    "compile:libs": "babel -d compiled/libs/ libs/",
-
+    "compile:libs": "babel -d compiled/lib/ lib/",
     "prepublish": "npm run compile",
     "build": "npm run test && npm run lint"
   },
