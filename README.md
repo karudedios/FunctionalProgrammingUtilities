@@ -34,7 +34,7 @@ return v % 2 == 0 ? v : oddAction(v);
 
 /* Identity Approach */
 
-import { Identity } from "...";
+import { Identity } from "functional-programming-utilities";
 
 let v = getRandomValue();
 let oddAction = (n) => n * 2;
@@ -85,7 +85,7 @@ return response;
 
 /* Given Approach */
 
-import { given } from "...";
+import { given } from "functional-programming-utilities";
 
 let value = getRandomValue();
 
@@ -134,13 +134,13 @@ if (v % 20 === 0) {
 return r;
 
 /* Validator Approach */
-import { Validator, Identity } from '...';
+import { Validator, id } from 'functional-programming-utilities';
 
 return Validator
   .from(getRandomValue())
   .where(v => v % 20 === 0)
   .match({
-    valid: Identity,
+    valid: id,
     invalid: v => v % 20
   });
 
