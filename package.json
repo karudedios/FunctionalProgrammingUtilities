@@ -14,7 +14,7 @@
     "compile:lib": "babel -d compiled/lib/ lib/",
     "compile:src": "babel -d compiled/dist/ src/",
     "prepublish": "npm run compile",
-    "build": "npm run lint && npm run test && npm run cover",
+    "build": "npm run lint && npm run cover",
     "post-build": "rm -rf coverage/"
   },
   "repository": {
