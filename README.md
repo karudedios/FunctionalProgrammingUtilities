@@ -1,6 +1,5 @@
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/karudedios/FunctionalProgrammingUtilities/master/LICENSE)
 [![devDependency Status](https://david-dm.org/karudedios/FunctionalProgrammingUtilities/dev-status.svg)](https://david-dm.org/karudedios/FunctionalProgrammingUtilities#info=devDependencies)
-[![Coverage Status](https://coveralls.io/repos/karudedios/FunctionalProgrammingUtilities/badge.svg?branch=master&service=github)](https://coveralls.io/github/karudedios/FunctionalProgrammingUtilities?branch=master)
 
 # Functional Programming Utilities
 
