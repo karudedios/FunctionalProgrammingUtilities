@@ -4,18 +4,17 @@
   "description": " Holder of various Functional Programming utilities",
   "main": "compiled/dist/FunctionalProgrammingUtilities.js",
   "scripts": {
-    "test": "mocha --compilers js:babel/register spec/",
-    "cover": "istanbul cover node_modules/mocha/bin/_mocha --report lcovonly -- --compilers js:babel/register --colors --reporter spec spec/",
-    "cover-es6": " node --harmony node_modules/istanbul-harmony/lib/cli.js cover --print both --hook-run-in-context  node_modules/mocha/bin/_mocha -- -R spec --U exports --compilers js:babel/register spec/",
-    "lint": "npm run lint:lib && npm run lint:src&& npm run lint:spec",
-    "lint:spec": "jshint spec/",
+    "test": "mocha --compilers js:babel/register --colors --reporter spec",
+    "cover": "babel-node node_modules/isparta/bin/isparta cover node_modules/mocha/bin/_mocha --report lcovonly -- --colors --reporter spec",
+    "lint": "npm run lint:lib && npm run lint:src&& npm run lint:test",
     "lint:lib": "jshint lib/",
     "lint:src": "jshint src/",
-    "compile": "npm run compile:libs && npm run compile:src",
+    "lint:test": "jshint test/",
+    "compile": "npm run compile:lib && npm run compile:src",
+    "compile:lib": "babel -d compiled/lib/ lib/",
     "compile:src": "babel -d compiled/dist/ src/",
-    "compile:libs": "babel -d compiled/lib/ lib/",
     "prepublish": "npm run compile",
-    "build": "npm run lint && npm run test && npm run cover-es6",
+    "build": "npm run lint && npm run test && npm run cover",
     "post-build": "rm -rf coverage/"
   },
   "repository": {
@@ -36,8 +35,7 @@
   "devDependencies": {
     "babel": "^5.8.23",
     "coveralls": "^2.11.4",
-    "istanbul": "^0.4.0",
-    "istanbul-harmony": "^0.3.16",
+    "isparta": "^3.1.0",
     "jshint": "^2.8.0",
     "mocha": "^2.3.3"
   }
