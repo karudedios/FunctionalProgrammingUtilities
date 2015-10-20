@@ -19,3 +19,11 @@
 This repository is a holder of various utilities that could come in handy if you're introduced to the Functional Programming world in Javascript.
 
 For more information please visit the [Wiki](https://github.com/karudedios/FunctionalProgrammingUtilities/wiki/0.-Table-of-Content)
+
+## Instructions
+1. Clone
+2. Run `npm install`
+3. Run `npm run compile`
+4. Include compiled script wherever you're going to use it
+5. ???
+6. Profit
