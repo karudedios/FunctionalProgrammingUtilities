@@ -42,7 +42,82 @@ let oddAction = (n) => n * 2;
 return (v % 2 === 0 ? Identity : oddAction)(v);
 ```
 
-This isn't the best example, but there's probaby no -good- example, since Identity simply returns whatever you throw at him.
+This isn't the best example, but there's probaby no *best* example, since Identity simply returns whatever you throw at him.
+
+### Pipe
+Takes care of passing a value through multiple functions in a left-associative manner.
+
+```javascript
+/* Regular Approach */
+
+let addTwo = (v) => v + 2;
+let timesTen = (v) => v * 10;
+let minusThree = (v) => v - 3;
+
+let r1 = addTwo(5);
+let r2 = timesTen(r1);
+let r3 = MinusThree(r2);
+
+return r3;
+
+/* Pipe Approach */
+
+import { pipe } from "functional-programming-utilities";
+
+let addTwo = (v) => v + 2;
+let timesTen = (v) => v * 10;
+let minusThree = (v) => v - 3;
+
+return pipe(5, addTwo, timesTen, minusThree);
+```
+
+### Compose
+Joins n functions in a left-associative manner to be called one after another when invoked.
+
+```javascript
+/* Regular Approach */
+
+let addTwo = (v) => v + 2;
+let timesTen = (v) => v * 10;
+let minusThree = (v) => v - 3;
+
+return minusThree(timesTen(addTwo(5)));
+
+/* Compose Approach */
+
+import { compose } from "functional-programming-utilities";
+
+let addTwo = (v) => v + 2;
+let timesTen = (v) => v * 10;
+let minusThree = (v) => v - 3;
+
+return compose(addTwo, timesTen, minusThree)(5);
+```
+
+### Curry
+Takes a function that receives n parameters and yields a function that will wait until n parameters are provided before invoking the original function.
+
+```javascript
+/* Regular Approach */
+
+let divide = (a, b) => a / b;
+// divide(10) => undefined; divide(10, 2) => 5
+
+let divideBy = (b) => (a) => a / b;
+// divideBy(10) => Function; divideBy(2)(10) => 5
+
+let halve = divideBy(2);
+return halve(10);
+
+/* Curry Approach */
+
+let divide = curry((b, a) => a / b);
+// divide(10) => Function; divide(2, 10) => 5; divide(2)(10) => 5
+
+let halve = divide(2);
+
+return halve(10);
+```
 
 ### Given
 Replacement for `switch/case` and `if/else if/else`
