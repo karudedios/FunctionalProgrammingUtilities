@@ -34,12 +34,17 @@ describe("[Validator] Functional Utilities: ", () => {
   });
 
   it("should apply a function if the wrapper is valid", () => {
-    let n = 10;
-
-    let v = Validator.from(n).where(x => x % 2 === 0).apply(x => x * 2);
+    let v = Validator.from(10).where(x => x % 2 === 0).apply(x => x * 2);
     assert.strictEqual(v, 20);
+  });
 
-    let i = Validator.from(n).where(x => x % 3 === 0).apply(x => x * 2);
-    assert.strictEqual(i, n);
+  it("should not apply a function if the wrapper is invalid", () => {
+    let v = Validator.from(10).where(x => x % 3 === 0).apply(x => x * 2);
+    assert.strictEqual(v, 10);
+  });
+
+  it("should ignore `where` clause if the wrapper is invalid", () => {
+    let v = Validator.from(5).where(x => !x).where(x => x % 5 === 0).apply(x => x + 2);
+    assert.strictEqual(v, 5);
   });
 });

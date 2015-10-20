@@ -1,10 +1,14 @@
 "use strict";
 
-import { Identity } from './../lib/bundle';
+import { Identity, id } from './../lib/bundle';
 
 let assert = require('assert');
 
 describe("[Identity] Functional Utilities: ", () => {
+  it("should have id and Identity be the same", () => {
+    assert.strictEqual(Identity, id, "Identity and id should be the exact same");
+  });
+
   it("should return the same provided value if null", () => {
     let v;
     assert.strictEqual(Identity(v), v);

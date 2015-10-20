@@ -21,8 +21,8 @@ describe("[Given] Functional Utilities: ", () => {
   });
 
   it("should apply `otherwise` when condition is not matched", () => {
-    let r = given(3).when(two => two === 2).then(two => two * 2);
-    assert.strictEqual(r.out(), 3, "Should have not multiplied two by two");
+    let r = given(3).when(three => three === 2).then(three => three + 2).otherwise(three => three * 2);
+    assert.strictEqual(r.out(), 6, "Should have multiplied three by two");
   });
 
   it("should only follow the matched path when using `then` or `otherwise`", () => {
