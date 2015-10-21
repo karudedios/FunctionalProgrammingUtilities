@@ -4,7 +4,7 @@ import { Validator } from './../lib/bundle';
 
 let assert = require('assert');
 
-describe("[Validator] Functional Utilities: ", () => {
+describe("Validator", () => {
   it("should wrap a value", () => {
     let n = 10;
     let v = Validator.from(n);

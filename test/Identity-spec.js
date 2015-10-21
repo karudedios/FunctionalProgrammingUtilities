@@ -4,7 +4,7 @@ import { identity, id } from './../lib/bundle';
 
 let assert = require('assert');
 
-describe("[Identity] Functional Utilities: ", () => {
+describe("Identity", () => {
   it("should have id and identity be the same", () => {
     assert.strictEqual(identity, id, "identity and id should be the exact same");
   });

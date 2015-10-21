@@ -4,7 +4,7 @@ import { given } from './../lib/bundle';
 
 let assert = require('assert');
 
-describe("[Given] Functional Utilities: ", () => {
+describe("Given", () => {
   it("should return wrapped value when calling .out", () => {
     let r = given(9);
     assert.strictEqual(r.out(), 9, "Should have returned 5");
