@@ -1,6 +1,6 @@
 {
   "name": "functional-programming-utilities",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": " Holder of various Functional Programming utilities",
   "main": "compiled/dist/FunctionalProgrammingUtilities.js",
   "scripts": {
