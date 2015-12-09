@@ -33,10 +33,10 @@
   },
   "homepage": "https://github.com/karudedios/FunctionalProgrammingUtilities#readme",
   "devDependencies": {
-    "babel": "^5.8.23",
-    "coveralls": "^2.11.4",
-    "isparta": "^3.1.0",
-    "jshint": "^2.8.0",
-    "mocha": "^2.3.3"
+    "babel": "5.8.23",
+    "coveralls": "2.11.4",
+    "isparta": "3.1.0",
+    "jshint": "2.8.0",
+    "mocha": "2.3.3"
   }
 }
