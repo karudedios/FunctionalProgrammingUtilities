@@ -18,7 +18,7 @@
 ## Description
 This repository is a holder of various utilities that could come in handy if you're introduced to the Functional Programming world in Javascript.
 
-For more information please visit the [Wiki](https://github.com/karudedios/FunctionalProgrammingUtilities/wiki/0.-Table-of-Content)
+For more information please visit the [Wiki](https://github.com/karudedios/FunctionalProgrammingUtilities/wiki/0.-Table-of-Contents)
 
 ## Instructions
 1. Clone
